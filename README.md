@@ -34,15 +34,40 @@ This project is admittedly inspired by [Front-end Job Interview Questions](https
 ####[[↑]](#toc) <a name='general'>General Questions:</a>
 
 * Why Functional Programming matters? When should a functional programming language be used?
-* What is Encapsulation important for?
+I think current Procedural or OOP languages can't be run on multiple processors simultaneously because of their binding with data. Functional programming can benefit from it. eg: Scheme and Haskell
+Good in concurrency, gamingAPI, mathematical computations.
+
+http://fsharpforfunandprofit.com/posts/ten-reasons-not-to-use-a-functional-programming-language/ 
+
+* What is Encapsulation important for? difference of encapsulation with abstraction.
+encapsulation hides how a function does it. eg: convertStringToNumber( str ) , how it does is hidden because of encapsulation.
+abstraction( saransh in hindi ): revealing what function does( show essential details only ). above function tells that it converts string to integer.
+
 * What is a real-time system and how is it different from an ordinary system?
+real time system has to do its task within time frame with minimum delay. it should have minimal context switching latency, interrupt latency. eg: ABS system in cars, pacemaker
+
 * What's the relationship between real-time languages and heap memory allocation?
+? 
+
 * Immutability is the practice of setting values once, at the moment of their creation, and never changing them. How immutability can help writing safer code?
+to avoid someone from accidently changing the constant or read only value, immutability is used.
+
 * Pro and cons of mutable and unmutable values.
+http://stackoverflow.com/questions/214714/mutable-vs-immutable-objects 
+
 * What's the Object-Relational impedence mismatch?
+https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch
+
 * What's the difference between design, architecture, functionality and aesthetic? Discuss
+software architecture is about design of entire system giving bigger picture while design include designing module/class or implementation details.
+http://stackoverflow.com/questions/704855/software-design-vs-software-architecture
+
+functionality is practically working of things while aesthetic means prettiness of things.
+
 * Which principles would you apply to define the size of a cache?
+
 * How do Companies like Microsoft, Google, Opera and Mozilla profit from their browsers?
+
 * Why opening a TCP socket has a large overhead?
 * What's the difference between TCP and HTTP?
 * Remove the concept of "null" from your preferred language.
