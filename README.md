@@ -71,23 +71,40 @@ functionality is practically working of things while aesthetic means prettiness 
 * Why opening a TCP socket has a large overhead?
 * What's the difference between TCP and HTTP?
 * Remove the concept of "null" from your preferred language.
-* What are the tradeoffs of client-side rendering vs. server-side rendering?
+  http://stackoverflow.com/questions/1296843/what-is-the-difference-between-null-0-and-0
 
+* What are the tradeoffs of client-side rendering vs. server-side rendering?
+using client side rendering( jQuery, AngularJS etc.. ) avoids loading whole page on small changes. but it harms SEO ( although phantomJS can be used, but it adds complexity ), quirks on various browsers. Sometimes it takes more time to load than getting page from server. So I think we should consider client side rendering only if number of simultaneous users are very high on server, then its good to offload some work to client side.
+http://www.quora.com/What-are-the-tradeoffs-of-client-side-rendering-vs-server-side-rendering
 
 ####[[↑]](#toc) <a name='open'>Open Questions:</a>
 * What did you learn this week?
 * List the last 5 books you read. 
 * Let's have a conversation about "*Reinventing the wheel*", the "*Not Invented Here Syndrome*" and the "*Eating Your Own Food*" practice
-* What makes good code good?
-* Why do people resist change?
-* Why is writing software difficult? What makes maintaining software hard?
+its good not to waste time in something which has already been created, tested and optimized. if we think that we are doing something new, we should check that someone else has done same thing earlier, because most of the time someone has already faced the same problem and might have given solution. 
+
+In programming, it is also common to refer to the "NIH syndrome" as the tendency towards reinventing the wheel (reimplementing something that is already available) based on the belief that in-house developments are inherently better suited, more secure, more controlled, quicker to develop, and incur lower overall cost (including maintenance cost) than using existing implementations. -- wiki
+but sometimes it may be good because of patent infringement, lock-in, better control
+
+Eating Your Own Food is using own product, eg: using bing search only. although its good bugs to find bugs.
+e difficult? What makes maintaining software hard?
+more you know about technology, architecture more you think about scalability, portability, performance harder it get.
+
 * Would you prefer working on Green Field or Brown Field projects? Why?
+https://en.wikipedia.org/wiki/Greenfield_project
+
+
+
 * [What happens when you type google.com into your browser and press enter?](https://github.com/alex/what-happens-when)
 * As a software engineer you want both to innovate and to be predictable. How those 2 goals can coexist in the same strategy?
 * There is an aesthetic element to all design. The question is, is this aesthetic element your friend or your enemy?
 * What does your computer do when you wait?
 * Explain Unicode/Database Transactions to a 5 year old child
 * Defend the monolithic architecture
+simple to develop, deploy, scale: just use multiple copies of application behind load balancer
+but as application grows code becomes difficult to understand, modify. scaling is in 1D, everything has to be scaled. what if only few parts of applications are loaded.
+OR we can use microservices arch :)
+
 * What does it mean to be a "Professional Developer"?
 * Is developing software an art, a craftsmanship or an engineering endeavour? Your opinion.
 * "People who like this also like... ". How would you implement this feature in an e-commerce shop? 
@@ -98,26 +115,67 @@ functionality is practically working of things while aesthetic means prettiness 
 ####[[↑]](#toc) <a name='patterns'>Questions about Design Patterns:</a>
 
 * Tell me about the Hollywood Principle.
+https://en.wikipedia.org/wiki/Hollywood_principle 
+
 * About the Law of Demeter (the Principle of Least Knowledge): write a code violating it, then fix it.
+component units should be decoupled in such a way that they call only their neighbours not strangers. increases adaptability and portability.
+
 * Which are the limits and pitfalls of Active-Record?
 * What are the differences between Active-Record and Data-Mapper?
+http://culttt.com/2014/06/18/whats-difference-active-record-data-mapper/ 
+
 * What is the intent of the Null Object Pattern?
+In Null Object pattern, we create an abstract class specifying various operations to be done, concrete classes extending this class and a null object class providing do nothing implemention of this class and will be used seemlessly where we need to check null value. 
+http://www.tutorialspoint.com/design_pattern/null_object_pattern.htm
+
 * Why is Composition often better than Inheritance?
+http://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition
+http://stackoverflow.com/questions/49002/prefer-composition-over-inheritance
+
+* Domain driven design 
+You should have knowledge of domain( say banking software ) before building software or that domain
+
 * What is an Anti-corruption Layer?
+similar to adapter design pattern but different, you are fixing someone else's code.
+http://programmers.stackexchange.com/questions/184464/what-is-an-anti-corruption-layer-and-how-is-it-used
+
 * Could you write a Thread-Safe Singleton class?
+auto thread safe singleton pattern can be used: 
+  private static final Object instance = new Object();
+
+	public static Object getInstance() {
+		return instance;
+	}
+
 * Could you implement Objects in terms of Higher Order Functions, and vice-versa?
+?
+
 * Show with an example that global objects are evil.
+
 * The ability to change implementation without affecting clients is called Data Abstraction. Produce and example violating this property, then fix it.
+
 * Write a snippet of code violating the DRY principle. Then, fix it.
+
 * How would you deal with Dependency Hell?
+use tools like npm for nodejs, use composer for php, make files can help. OS have their own package managers.
+
 * Why is goto evil?
+goto is a quick way to get out of mess. if you have to use goto there might be some problem with design. I think if we can't redesign we should use goto.
+
 * Suppose the system you are working on does not support transactionality. How would you implement it from scratch?
 
 
 ####[[↑]](#toc) <a name='languages'>Questions about Languages:</a>
 
 * Tell me the 3 worse defects of your preferred language
+php: dynamic typing and casting like C, == and === for comparison
+doesn't support unsigned integers, have to use lib BCMath, auto conversion of integers to float in overflow
+order of arguments differ strpos and array_search
+can't do recursion
+
 * Why is there a rising interest about Functional Programming?
+
+
 * What is a closure, and what is useful for? What's in common between closures and classes?
 * What are generics useful for? 
 * What are high-order functions? What are they useful for? Write one, in your preferred language. 
