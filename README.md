@@ -197,6 +197,8 @@ can't do recursion
 
 
 ####[[↑]](#toc) <a name='databases'>Questions about Databases:</a>
+* mysql vs postgress sql
+http://stackoverflow.com/questions/110927/would-you-recommend-postgresql-over-mysql
 
 * How would you manage the migration of a project from MySQL to PostgreSQL?
 * Why in SQL ```SELECT * FROM table WHERE field = null``` does not match records with null ``field``?
@@ -212,6 +214,8 @@ can't do recursion
 * What is Eventual Consistency?
 * About the CAP Theorem, make examples of CP, AP and CA systems.
 * How does NoSQL tackle scalability challenges?
+* mongoDB vs lucene searching
+mongodb stores data, creates indexes as in sql so searching is similar to sql. but lucene stores inverted indexes for tokens, so its good for full text search
 
 
 ####[[↑]](#toc) <a name='codeversioning'>Questions about code versioning:</a>
