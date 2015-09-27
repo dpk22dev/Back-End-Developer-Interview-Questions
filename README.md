@@ -180,38 +180,93 @@ can't do recursion
 * What are generics useful for? 
 * What are high-order functions? What are they useful for? Write one, in your preferred language. 
 * Write a loop, then transform it into a recursive function, avoiding mutability. Discuss. 
-* What does it mean when a language treats functions as first-class citizens?
-* Show me an example where an Anonymous Function can be useful
-* What is Dynamic Method Dispatch?
+* What does it mean when a language treats functions as first-class citizens? <br/>
+
+this means the language supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures.
+
+* Show me an example where an Anonymous Function can be useful <br/>
+https://en.wikipedia.org/wiki/Anonymous_function
+
+* What is Dynamic Method Dispatch? <br/>
+http://stackoverflow.com/questions/20187587/what-is-the-difference-between-dynamic-dispatch-and-late-binding-in-c
+<br/>
+
+
 * What are namespaces useful for? Invent an alternative.
+
 * Talk about Interoperability between Java and C# (choose 2 other arbitrary languages)
-* Why do many software engineers not like Java?
-* What makes a good language good and a bad language bad?
-* Write two functions, one Referentially Transparent and the other one Referentially Opaque. Discuss.
+
+* Why do many software engineers not like Java? <br/>
+http://www.forbes.com/sites/quora/2015/02/21/java-makes-programmers-want-to-do-absolutely-anything-else-with-their-time/
+complexity, running in VM etc...
+
+* What makes a good language good and a bad language bad? <br/>
+https://www.quora.com/What-makes-a-good-programming-language
+
+
+* Write two functions, one Referentially Transparent and the other one Referentially Opaque. Discuss.<br/>
+if compiler can replace funciton with expression( content in funciton )  function is referentially transparent other wise its opaque. funciton using global vars can be opaque. 
+https://en.wikipedia.org/wiki/Referential_transparency_(computer_science)
+
 * Whats the Stack and what's the Heap?
 * Why is it important that in a language functions are first class citizen?
 
 
 ####[[↑]](#toc) <a name='web'>Questions about Web development:</a>
-* Why first-party cookies and third-party cookies are treated so differently?
+* Why first-party cookies and third-party cookies are treated so differently?<br/>
 
 
 ####[[↑]](#toc) <a name='databases'>Questions about Databases:</a>
-* mysql vs postgress sql
+* mysql vs postgress sql <br/>
 http://stackoverflow.com/questions/110927/would-you-recommend-postgresql-over-mysql
 
-* How would you manage the migration of a project from MySQL to PostgreSQL?
-* Why in SQL ```SELECT * FROM table WHERE field = null``` does not match records with null ``field``?
-* What's ACID (Atomicity, Consistency, Isolation, Durability)?
-* How would you manage database schema migrations?
-* How is Lazy Loading achieved? When is it useful? What are its pitfalls?
-* What's the N+1 problem?
-* How would you find the most expensive queries in an application?
 
+* How would you manage the migration of a project from MySQL to PostgreSQL? <br/>
+ https://wiki.postgresql.org/wiki/How_to_make_a_proper_migration_from_MySQL_to_PostgreSQL
+ http://stackoverflow.com/questions/4756825/mysql-to-postgresql-migration
+
+* Why in SQL ```SELECT * FROM table WHERE field = null``` does not match records with null ``field``? <br/>
+http://stackoverflow.com/questions/12853944/why-in-sql-null-cant-match-with-null
+
+* What's ACID (Atomicity, Consistency, Isolation, Durability)?
+
+* How would you manage database schema migrations? <br/>
+when adding or removing coloumn, other teams should be notified about changes. be careful, sometimes old codebase might not work with new schema. situation like we changed database, new code doesnt work with it and old code doesn't work too because db has changed. get help from migration tools. 
+
+* How is Lazy Loading achieved? When is it useful? What are its pitfalls?
+Lazy Loading is a programming practice in which you only load or initialize an object when you first need it.  eg: lazily loading images on scroll of page or some threshold time.
+
+if we are using ORM, due to lazy loading ORM will fire query for each cat, which will flood DB.
+$cats = load_cats();
+foreach ($cats as $cat) {
+  $cats_hats = load_hats_for_cat($cat);
+  // ...
+}
+
+we can batch queries or use eager loading by:
+
+$cats = load_cats();
+$hats = load_all_hats_for_these_cats($cats);
+foreach ($cats as $cat) {
+  $cats_hats = $hats[$cat->getID()];
+}
+
+http://www.sitepoint.com/silver-bullet-n1-problem/
+
+* What's the N+1 problem?
+https://secure.phabricator.com/book/phabcontrib/article/n_plus_one/
+
+* How would you find the most expensive queries in an application? <br/>
+http://www.ducea.com/2006/11/06/identifying-mysql-slow-queries/ 
+or we can find interval it took to fetch/update data...
 
 ####[[↑]](#toc) <a name='nosql'>Questions about NoSQL:</a>
 
-* What is Eventual Consistency?
+* What is Eventual Consistency? <br/>
+Eventual consistency => data will be updated eventually like DNS system. strong consistency => but SQL requires databases to be ACID compliant and latest data should always be visible.
+
+https://cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore/
+
 * About the CAP Theorem, make examples of CP, AP and CA systems.
 * How does NoSQL tackle scalability challenges?
 * mongoDB vs lucene searching
