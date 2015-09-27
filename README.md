@@ -267,8 +267,12 @@ Eventual consistency => data will be updated eventually like DNS system. strong 
 
 https://cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore/
 
-* About the CAP Theorem, make examples of CP, AP and CA systems.
-* How does NoSQL tackle scalability challenges?
+* About the CAP Theorem, make examples of CP, AP and CA systems. <br/>
+C - consistency, A - availability, P -partition tolerant: can't have more than 2 at a time
+
+* How does NoSQL tackle scalability challenges? <br/>
+http://programmers.stackexchange.com/questions/194340/why-are-nosql-databases-more-scalable-than-sql
+
 * mongoDB vs lucene searching
 mongodb stores data, creates indexes as in sql so searching is similar to sql. but lucene stores inverted indexes for tokens, so its good for full text search
 
@@ -285,10 +289,17 @@ mongodb stores data, creates indexes as in sql so searching is similar to sql. b
 
 ####[[↑]](#toc) <a name='concurrency'>Questions about Concurrency:</a>
 
-* Why do we need Concurrency, anyway? Explain.
+* Why do we need Concurrency, anyway? Explain. <br/>
+http://programmers.stackexchange.com/questions/115474/why-should-i-know-concurrent-programming
+
 * Why is testing multithreading / concurrent code so difficult? 
-* What is a Race Condition? Code an example, using whatever language you like.
-* What is a Deadlock? Explain using code.
+
+* What is a Race Condition? Code an example, using whatever language you like. <br/>
+http://stackoverflow.com/questions/34510/what-is-a-race-condition
+
+* What is a Deadlock? Explain using code. <br/>
+ http://www.java2novice.com/java-interview-programs/thread-deadlock/
+
 * What is Process Starvation?
 * What is a Wait Free algorithm?
 
