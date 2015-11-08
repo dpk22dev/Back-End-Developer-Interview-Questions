@@ -268,7 +268,8 @@ Eventual consistency => data will be updated eventually like DNS system. strong 
 https://cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore/
 
 * About the CAP Theorem, make examples of CP, AP and CA systems. <br/>
-C - consistency, A - availability, P -partition tolerant: can't have more than 2 at a time
+C - consistency, A - availability, P -partition tolerant: can't have more than 2 at a time <br/>
+http://stackoverflow.com/questions/3342497/explanation-of-base-terminology
 
 * How does NoSQL tackle scalability challenges? <br/>
 http://programmers.stackexchange.com/questions/194340/why-are-nosql-databases-more-scalable-than-sql
