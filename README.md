@@ -351,26 +351,53 @@ http://stackoverflow.com/questions/34510/what-is-a-race-condition
 
 ####[[↑]](#toc) <a name='architecture'>Questions about Software Architecture:</a>
 
-* What is CQRS (Command Query Responsibility Segregation)? How is it different from the oldest Command-Query Separation Principle?
+* What is CQRS (Command Query Responsibility Segregation)? How is it different from the oldest Command-Query Separation Principle?<br/>
+ http://programmers.stackexchange.com/questions/165120/separation-versus-segregation
+
 * What is Three-Tier architecture? 
+http://stackoverflow.com/questions/4577587/mvc-vs-3-tier-architecture
+
 * How would you design a software system for scalability?
+ 
 * What are the strategies to deal with the C10k problem?
+https://www.youtube.com/watch?v=73XNtI0w7jA&feature=youtu.be
+
 * How to deal with failover and user sessions?
-* How would you design a decentralized (that is, with no central server) P2P system?
+
+* How would you design a decentralized (that is, with no central server) P2P system? <br/>
+http://abdulapopoola.com/2013/03/12/design-patterns-pub-sub-explained/
+
+* pubsub vs observer <br/>
+http://stackoverflow.com/questions/15594905/difference-between-observer-pub-sub-and-data-binding
+
 * Why doesn't CGI scale?
 * How would you defend the design of your systems against Vendor Lock-in?
 * What makes code readable?
 * What are the disadvantages of the Publish-Subscribe pattern at scale?
 * When would you apply horizontal scaling and when vertical scaling?
-* When is a cache not useful or even dangerous?
-* What's new in CPUs since the 80s, and how does it affect programming?
+horizontal or scaling out: use cluster of multiple machines. scaling vertically: increase RAM/CPU on same machine.<br/>
+http://stackoverflow.com/questions/11707879/difference-between-scaling-horizontally-and-vertically-for-databases
+
+* When is a cache not useful or even dangerous?<br/>
+http://www.slideshare.net/betclicTech/minitraining-to-cache-or-not-to-cache
+
+* What's new in CPUs since the 80s, and how does it affect programming?<br/>
+http://danluu.com/new-cpu-features/
+
 * In which part of the lifecycle performance should be taken in consideration, and how?
+
 * How could a Denial of Service arise not maliciously but for a design or architectural problem?
 * Why does Event-Driven Architecture improve scalability?
-* What’s the relationship between Performance and Scalability?
-* When is it OK to use tight coupling?
-* What characteristic should a system have to be Cloud Ready?
 
+* What’s the relationship between Performance and Scalability?<br/>
+http://apmblog.dynatrace.com/2008/09/11/performance-vs-scalability/
+
+* When is it OK to use tight coupling?<br/>
+http://stackoverflow.com/questions/19976273/where-loose-and-tight-coupling-would-be-used-as-a-real-scenario<br/>
+
+* What characteristic should a system have to be Cloud Ready?<br/>
+http://www.ibm.com/developerworks/websphere/techjournal/1404_brown/1404_brown.html<br/>
+http://vitalflux.com/how-to-design-develop-cloud-ready-applications/
 
 ####[[↑]](#toc) <a name='soa'>Questions about Service Oriented Architecture and Microservices:</a>
 * Why, in a SOA, long-lived transactions are discorauged and Sagas are suggested instead?
